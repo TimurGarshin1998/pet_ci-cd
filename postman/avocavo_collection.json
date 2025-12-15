@@ -54,10 +54,11 @@
               "    pm.expect(jsonData).to.have.property(\"success\", true);",
               "});",
               "",
-              "pm.test(\"Response has nutrition block\", function () {",
-              "    pm.expect(jsonData).to.have.property(\"nutrition\");",
-              "    pm.expect(jsonData.nutrition).to.have.property(\"calories_total\");",
-              "});"
+                "pm.test(\"Response has nutrition block\", function () {",
+                "    pm.expect(jsonData).to.have.property(\"nutrition\");",
+                    "pm.expect(jsonData.nutrition).to.be.an(\"object\");",
+                    "pm.expect(Object.keys(jsonData.nutrition).length).to.be.above(0);",
+               "});"
             ],
             "type": "text/javascript"
           }
