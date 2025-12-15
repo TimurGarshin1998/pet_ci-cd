@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Nutrition Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Daily Nutrition Planner</h1>
+
+  <section>
+    <label for="ingredient-input">Ingredient:</label>
+    <input id="ingredient-input" type="text" placeholder="e.g. 1 cup rice" />
+    <button id="add-btn">Add to day</button>
+  </section>
+
+  <section>
+    <h2>Today's menu</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ingredient</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Fat</th>
+          <th>Carbs</th>
+        </tr>
+      </thead>
+      <tbody id="menu-body"></tbody>
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <th id="total-calories">0</th>
+          <th id="total-protein">0</th>
+          <th id="total-fat">0</th>
+          <th id="total-carbs">0</th>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
