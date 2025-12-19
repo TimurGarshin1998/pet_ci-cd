@@ -1,6 +1,4 @@
 const API_URL = "https://pet-ci-cd-backend.onrender.com/api/nutrition";
-//const API_KEY = "sk_welcome_api_key_gr4d8h00t8ftskobfwsrx"; // для пет-проекта можно так, в реале – через backend/secrets
-//API_KEY = os.getenv("AVOCAVO_API_KEY")
 
 const input = document.getElementById("ingredient-input");
 const addBtn = document.getElementById("add-btn");
@@ -22,16 +20,16 @@ addBtn.addEventListener("click", async () => {
   const ingredient = input.value.trim();
   if (!ingredient) return;
 
-  try {
+  try 
+  {
     const res = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-Key": API_KEY
-      },
-      body: JSON.stringify({ ingredient })
-    });
-
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ingredient })
+      });
+   
     if (!res.ok) {
       alert(`API error: ${res.status}`);
       return;
