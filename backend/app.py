@@ -36,7 +36,23 @@ def nutrition_proxy():
 
     response = requests.post(AVOCAVO_URL, json=data, headers=headers)
 
-    return jsonify(response.json()), response.status_code
+    data = response.json()
+    nutrition = data.get("nutrition", {})
+
+    normalized_response = {
+    "success": True,
+    "ingredient": data.get("ingredient"),
+    "nutrition": {
+        "calories_total": nutrition.get("calories", 0),
+        "protein_total": nutrition.get("protein", 0),
+        "total_fat_total": nutrition.get("total_fat", 0),
+        "carbohydrates_total": nutrition.get("carbohydrates", 0),
+    }
+}
+
+    return jsonify(normalized_response), response.status_code
+
+    #return jsonify(response.json()), response.status_code
 
 
 if __name__ == "__main__":
