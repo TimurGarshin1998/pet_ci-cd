@@ -1,5 +1,6 @@
-const API_URL = "https://app.avocavo.app/api/v2/nutrition/ingredient";
-const API_KEY = "sk_welcome_api_key_gr4d8h00t8ftskobfwsrx"; // для пет-проекта можно так, в реале – через backend/secrets
+const API_URL = "https://pet-ci-cd-backend.onrender.com/api/nutrition";
+//const API_KEY = "sk_welcome_api_key_gr4d8h00t8ftskobfwsrx"; // для пет-проекта можно так, в реале – через backend/secrets
+//API_KEY = os.getenv("AVOCAVO_API_KEY")
 
 const input = document.getElementById("ingredient-input");
 const addBtn = document.getElementById("add-btn");
